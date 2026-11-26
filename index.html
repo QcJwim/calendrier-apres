@@ -3,51 +3,49 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Le calendrier de l'après : une porte à ouvrir chaque jour du 26 décembre au 31 janvier, et un lien vers une nouvelle plateforme." />
-  <meta name="theme-color" content="#0b1024" />
-  <title>Calendrier de l'après — 26 décembre → 31 janvier</title>
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='88'%3E🎁%3C/text%3E%3C/svg%3E" />
+  <meta name="description" content="Le calendrier de l'après de Coach Annabh : 37 portes à ouvrir du 26 décembre au 31 janvier, avec une surprise entraînement ou recette chaque jour." />
+  <meta name="theme-color" content="#1e1e1e" />
+  <title>Calendrier de l'après — Coach Annabh</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23b40225'/%3E%3Ctext x='50' y='68' text-anchor='middle' font-family='Arial' font-weight='bold' font-size='44' fill='white'%3ECA%3C/text%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="snow" id="snow" aria-hidden="true"></div>
-
   <header class="site-header">
-    <a class="brand" href="#haut" aria-label="Retour en haut">
-      <span class="brand__icon" aria-hidden="true">✦</span>
-      <span>Calendrier <strong>de l'après</strong></span>
+    <a class="brand" href="#haut" aria-label="Coach Annabh — retour en haut">
+      <span class="brand__logo" aria-hidden="true"></span>
     </a>
-    <div class="header-meta"><span>26.12</span><span class="header-meta__arrow">→</span><span>31.01</span></div>
+    <span class="header-tag">Calendrier de l'après</span>
   </header>
 
   <main id="haut">
     <section class="hero">
-      <div class="hero__glow" aria-hidden="true"></div>
-      <p class="eyebrow">Édition <span id="season-label">2026 → 2027</span></p>
-      <h1>Le calendrier<br /><em>de l'après</em></h1>
-      <p class="hero__lead">
-        Les fêtes sont passées, mais les surprises continuent.<br class="break-desktop" />
-        37 jours, 37 portes, 37 nouvelles plateformes à découvrir.
-      </p>
-
-      <div class="countdown" id="countdown" role="timer" aria-live="polite">
-        <span class="countdown__label">Chargement…</span>
-      </div>
-
-      <div class="hero__actions">
-        <a class="btn btn--primary" href="#calendrier">Découvrir les portes <span aria-hidden="true">↓</span></a>
-        <span class="hero__hint">Une porte par jour, à minuit précis.</span>
+      <div class="hero__texture" aria-hidden="true"></div>
+      <div class="hero__inner">
+        <img class="hero__logo" src="logo.png" alt="Coach Annabh" />
+        <p class="eyebrow">37 jours · 37 surprises</p>
+        <h1>Calendrier<br /><span class="highlight">de l'après</span></h1>
+        <p class="hero__lead">
+          Du 26 décembre au 31 janvier, une porte par jour.<br class="break-desktop" />
+          Derrière chacune : un entraînement ou une recette pour rester en mouvement.
+        </p>
+        <div class="countdown" id="countdown" role="timer" aria-live="polite">
+          <span class="countdown__label">Chargement…</span>
+        </div>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#calendrier">Ouvrir les portes <span aria-hidden="true">↓</span></a>
+          <span class="hero__hint">Une nouvelle surprise chaque jour à minuit.</span>
+        </div>
       </div>
     </section>
 
     <section class="calendar" id="calendrier" aria-labelledby="calendar-title">
       <div class="section-head">
         <div>
-          <p class="eyebrow">Les 37 portes</p>
-          <h2 id="calendar-title">La suite attend…</h2>
+          <p class="eyebrow">Le programme</p>
+          <h2 id="calendar-title">37 portes à ouvrir</h2>
         </div>
         <div class="progress-wrap">
           <span id="progress-text" aria-live="polite">0 / 37 ouvertes</span>
@@ -57,22 +55,35 @@
       <div class="grid" id="grid"></div>
     </section>
 
-    <section class="how">
-      <div class="how__intro">
-        <p class="eyebrow">Mode d'emploi</p>
-        <h2>C'est aussi simple que ça</h2>
+    <section class="how" aria-labelledby="how-title">
+      <div class="how__inner">
+        <div class="how__intro">
+          <p class="eyebrow">C'est simple</p>
+          <h2 id="how-title">Bouge. Cuisine.<br />Répète.</h2>
+          <p>Un petit rendez-vous quotidien pour garder la structure et la discipline, même après les fêtes.</p>
+        </div>
+        <ol class="steps">
+          <li class="step"><span class="step__num">01</span><h3>Passe voir</h3><p>Chaque jour, une nouvelle porte s'allume.</p></li>
+          <li class="step"><span class="step__num">02</span><h3>Ouvre la porte</h3><p>Un clic et tu découvres la surprise du jour.</p></li>
+          <li class="step"><span class="step__num">03</span><h3>Mets-toi à l'action</h3><p>Entraînement ou recette : à toi de jouer.</p></li>
+        </ol>
       </div>
-      <ol class="steps">
-        <li class="step"><span class="step__num">01</span><h3>Passez voir</h3><p>Chaque jour à partir du 26 décembre, une nouvelle porte s'allume.</p></li>
-        <li class="step"><span class="step__num">02</span><h3>Ouvrez la porte</h3><p>Un clic suffit pour révéler la surprise du jour.</p></li>
-        <li class="step"><span class="step__num">03</span><h3>Découvrez</h3><p>Un lien vous emmène directement sur la plateforme du jour.</p></li>
-      </ol>
+    </section>
+
+    <section class="cta">
+      <div>
+        <p class="eyebrow">Besoin d'un coup de pouce ?</p>
+        <h2>On construit ta discipline ensemble.</h2>
+      </div>
+      <a class="btn btn--primary" href="https://tr.ee/Q-I7O3LhWS" target="_blank" rel="noopener noreferrer">Consultation gratuite <span aria-hidden="true">↗</span></a>
     </section>
   </main>
 
   <footer class="site-footer">
-    <p>Calendrier de l'après · Du 26 décembre au 31 janvier</p>
+    <p>Un calendrier de l'après signé <strong>Coach Annabh</strong> · 26 décembre → 31 janvier</p>
     <p class="footer-links">
+      <a href="https://www.instagram.com/annabheroux/" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="https://coachannabh.com/" target="_blank" rel="noopener noreferrer">coachannabh.com</a>
       <a href="?preview=1">Mode aperçu (tout débloquer)</a>
       <button type="button" id="reset-btn" class="link-btn">Réinitialiser mes portes ouvertes</button>
     </p>
@@ -80,12 +91,12 @@
 
   <dialog id="door-dialog" class="dialog" aria-labelledby="dialog-title">
     <button type="button" class="dialog__close" id="dialog-close" aria-label="Fermer la fenêtre">×</button>
-    <div class="dialog__icon" aria-hidden="true">🎁</div>
     <p class="eyebrow" id="dialog-date">26 DÉCEMBRE</p>
-    <h2 id="dialog-title">Votre surprise du jour</h2>
+    <span class="pill" id="dialog-type">ENTRAÎNEMENT</span>
+    <h2 id="dialog-title">Ta surprise du jour</h2>
     <p class="dialog__text" id="dialog-text"></p>
-    <a class="btn btn--primary dialog__cta" id="dialog-link" target="_blank" rel="noopener noreferrer">Accéder à la plateforme <span aria-hidden="true">↗</span></a>
-    <button type="button" class="btn btn--ghost" id="dialog-later">Revenir plus tard</button>
+    <a class="btn btn--primary dialog__cta" id="dialog-link" target="_blank" rel="noopener noreferrer">Voir la surprise <span aria-hidden="true">↗</span></a>
+    <button type="button" class="btn btn--ghost" id="dialog-later">Plus tard</button>
   </dialog>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>

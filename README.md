@@ -1,54 +1,45 @@
-# Calendrier de l'après
+# Calendrier de l'après — Coach Annabh
 
-Site statique (HTML/CSS/JS pur) : **37 portes à ouvrir du 26 décembre au 31 janvier**, une nouvelle porte accessible chaque jour à minuit, avec un lien externe par jour. Aucune installation ni build nécessaire.
+Site statique (HTML/CSS/JS pur), inspiré de l'univers de [coachannabh.com](https://coachannabh.com/) : fond noir `#1e1e1e`, rouge `#b40225`, typographie Arimo, blocs numérotés et mise en page épurée.
+
+**37 portes à ouvrir du 26 décembre au 31 janvier.** Chaque porte cache un lien vers un entraînement ou une recette.
 
 ## Fonctionnement
 
-- Une porte est **disponible seulement à partir de sa date** (heure locale du visiteur). Les autres affichent un cadenas.
-- Les portes déjà ouvertes sont mémorisées dans le navigateur (`localStorage`) et restent ouvertes toute l'édition.
-- Une nouvelle édition recommence automatiquement le 26 décembre suivant.
-- Hors période (du 1er février au 25 décembre), le site affiche l'édition à venir, avec toutes les portes fermées et un compte à rebours jusqu'au 26 décembre.
-- Bouton « Mode aperçu » en bas de page (`?preview=1`) : débloque toutes les portes pour vérifier le rendu. Il n'enregistre aucune ouverture.
+- Une porte est disponible seulement à partir de sa date (heure locale du visiteur) ; les autres affichent un cadenas.
+- Quand la porte est ouverte, elle révèle le type de surprise (entraînement / recette) et son titre ; le lien s'ouvre dans la fenêtre.
+- Les portes ouvertes sont mémorisées dans le navigateur pour l'édition en cours.
+- Nouvelle édition automatique chaque 26 décembre.
+- Hors période, le site affiche l'édition à venir avec le compte à rebours jusqu'au 26 décembre.
+- `?preview=1` débloque toutes les portes pour tester sans attendre la date.
 
-## Personnaliser les liens
+## Remplir les 37 liens
 
-Tout se passe dans [`app.js`](app.js), au tout début du fichier :
+Tout se passe dans [`app.js`](app.js), au début du fichier, dans le tableau `DAYS` :
 
 ```js
-const LINKS = [
-  "https://exemple.fr/jour-01", // 26 décembre
-  // ... 37 URLs au total, jusqu'au 31 janvier
+const DAYS = [
+  { type: "entrainement", title: "Full body 20 min", url: "https://..." }, // 26 décembre
+  { type: "recette",      title: "Bowl protéiné",     url: "https://..." }, // 27 décembre
+  // ... jusqu'au 31 janvier (37 lignes)
 ];
 ```
 
-Remplacez les 37 URLs d'exemple par vos liens. L'ordre est :
+- `type` : `"entrainement"` ou `"recette"` (change l'icône, le libellé et le bouton).
+- `title` : le texte révélé quand la porte est ouverte.
+- `url` : le lien externe. Laissez `""` si vous ne l'avez pas encore : le bouton affichera « Lien à ajouter ».
 
-| Index | Dates |
-| --- | --- |
-| 0 → 5 | 26 → 31 décembre |
-| 6 → 36 | 1 → 31 janvier |
+Ordre des jours : index 0→5 = 26→31 décembre, index 6→36 = 1→31 janvier.
 
-Par défaut, le nom affiché dans la fenêtre est le domaine du lien. Pour afficher un nom personnalisé, renseignez le tableau `NAMES` juste en dessous (un nom par jour, dans le même ordre) :
+Le logo (`logo.png`) apparaît en blanc dans le hero et en rouge dans l'en-tête (via un masque CSS).
 
-```js
-const NAMES = [
-  "Ma super plateforme", // 26 décembre
-  // ...
-];
-```
+Les textes d'introduction sont dans [`index.html`](index.html), les couleurs et la mise en page dans [`styles.css`](styles.css).
 
-Pour modifier les textes d'introduction, éditez [`index.html`](index.html). Les couleurs et la mise en page sont dans [`styles.css`](styles.css) (variables en haut du fichier).
+## GitHub Pages
 
-## Publier sur GitHub Pages
+Le dépôt est `QcJwim/calendrier-apres`, publié via `main` / racine :
+https://qcjwim.github.io/calendrier-apres/
 
-1. Créez un dépôtGitHub et uploadez les trois fichiers (`index.html`, `styles.css`, `app.js`) à la racine.
-2. Dans le dépôt, allez dans **Settings → Pages**.
-3. Sous **Build and deployment**, choisissez **Deploy from a branch**.
-4. Sélectionnez la branche `main` (ou `master`) et le dossier `/ (root)`, puis **Save**.
-5. Votre site sera disponible sur `https://<votre-pseudo>.github.io/<nom-du-depot>/`.
+Après modification d'un fichier, uploadez-le dans le dépôt (Add file → Upload files) et attendez la reconstruction de GitHub Pages (quelques secondes).
 
-Aucune configuration supplémentaire n'est nécessaire : les chemins des fichiers sont relatifs.
-
-## Vérifier avant la date d'ouverture
-
-Ouvrez `index.html?preview=1` en local, ou `https://<votre-pseudo>.github.io/<nom-du-depot>/?preview=1` une fois publié : toutes les portes seront cliquables pour tester les liens et le rendu.
+Aperçu complet : https://qcjwim.github.io/calendrier-apres/?preview=1

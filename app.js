@@ -1,54 +1,53 @@
 /* ============================================================================
-   Calendrier de l'après — 26 décembre → 31 janvier
+   Calendrier de l'après — Coach Annabh — 26 décembre → 31 janvier
    ----------------------------------------------------------------------------
-   Pour personnaliser : remplacez chaque URL ci-dessous par le lien du jour.
-   L'ordre est : 26, 27, 28, 29, 30, 31 décembre puis 1 → 31 janvier (37 liens).
-   Vous pouvez aussi renseigner NAMES pour afficher un nom personnalisé
-   au lieu du nom de domaine (laisser vide pour utiliser le domaine).
+   Chaque porte cache un lien vers un entraînement ou une recette.
+   Pour personnaliser, remplissez les 37 lignes ci-dessous dans l'ordre :
+   26, 27, 28, 29, 30, 31 décembre puis 1 → 31 janvier.
+
+   type  : "entrainement" ou "recette"
+   title : le nom affiché quand la porte est ouverte
+   url   : le lien externe (laissez "" si vous ne l'avez pas encore)
    ========================================================================== */
 
-const LINKS = [
-  "https://exemple.fr/jour-01",  // 26 décembre
-  "https://exemple.fr/jour-02",  // 27 décembre
-  "https://exemple.fr/jour-03",  // 28 décembre
-  "https://exemple.fr/jour-04",  // 29 décembre
-  "https://exemple.fr/jour-05",  // 30 décembre
-  "https://exemple.fr/jour-06",  // 31 décembre
-  "https://exemple.fr/jour-07",  // 1 janvier
-  "https://exemple.fr/jour-08",  // 2 janvier
-  "https://exemple.fr/jour-09",  // 3 janvier
-  "https://exemple.fr/jour-10",  // 4 janvier
-  "https://exemple.fr/jour-11",  // 5 janvier
-  "https://exemple.fr/jour-12",  // 6 janvier
-  "https://exemple.fr/jour-13",  // 7 janvier
-  "https://exemple.fr/jour-14",  // 8 janvier
-  "https://exemple.fr/jour-15",  // 9 janvier
-  "https://exemple.fr/jour-16",  // 10 janvier
-  "https://exemple.fr/jour-17",  // 11 janvier
-  "https://exemple.fr/jour-18",  // 12 janvier
-  "https://exemple.fr/jour-19",  // 13 janvier
-  "https://exemple.fr/jour-20",  // 14 janvier
-  "https://exemple.fr/jour-21",  // 15 janvier
-  "https://exemple.fr/jour-22",  // 16 janvier
-  "https://exemple.fr/jour-23",  // 17 janvier
-  "https://exemple.fr/jour-24",  // 18 janvier
-  "https://exemple.fr/jour-25",  // 19 janvier
-  "https://exemple.fr/jour-26",  // 20 janvier
-  "https://exemple.fr/jour-27",  // 21 janvier
-  "https://exemple.fr/jour-28",  // 22 janvier
-  "https://exemple.fr/jour-29",  // 23 janvier
-  "https://exemple.fr/jour-30",  // 24 janvier
-  "https://exemple.fr/jour-31",  // 25 janvier
-  "https://exemple.fr/jour-32",  // 26 janvier
-  "https://exemple.fr/jour-33",  // 27 janvier
-  "https://exemple.fr/jour-34",  // 28 janvier
-  "https://exemple.fr/jour-35",  // 29 janvier
-  "https://exemple.fr/jour-36",  // 30 janvier
-  "https://exemple.fr/jour-37",  // 31 janvier
-];
-
-const NAMES = [
-  // Exemple : "Ma plateforme préférée",  // jour 1 (26 décembre)
+const DAYS = [
+  { type: "entrainement", title: "Entraînement du jour 1", url: "" },  // 26 décembre
+  { type: "recette",      title: "Recette du jour 2",      url: "" },  // 27 décembre
+  { type: "entrainement", title: "Entraînement du jour 3", url: "" },  // 28 décembre
+  { type: "recette",      title: "Recette du jour 4",      url: "" },  // 29 décembre
+  { type: "entrainement", title: "Entraînement du jour 5", url: "" },  // 30 décembre
+  { type: "recette",      title: "Recette du jour 6",      url: "" },  // 31 décembre
+  { type: "entrainement", title: "Entraînement du jour 7", url: "" },  // 1 janvier
+  { type: "recette",      title: "Recette du jour 8",      url: "" },  // 2 janvier
+  { type: "entrainement", title: "Entraînement du jour 9", url: "" },  // 3 janvier
+  { type: "recette",      title: "Recette du jour 10",     url: "" },  // 4 janvier
+  { type: "entrainement", title: "Entraînement du jour 11", url: "" }, // 5 janvier
+  { type: "recette",      title: "Recette du jour 12",     url: "" },  // 6 janvier
+  { type: "entrainement", title: "Entraînement du jour 13", url: "" }, // 7 janvier
+  { type: "recette",      title: "Recette du jour 14",     url: "" },  // 8 janvier
+  { type: "entrainement", title: "Entraînement du jour 15", url: "" }, // 9 janvier
+  { type: "recette",      title: "Recette du jour 16",     url: "" },  // 10 janvier
+  { type: "entrainement", title: "Entraînement du jour 17", url: "" }, // 11 janvier
+  { type: "recette",      title: "Recette du jour 18",     url: "" },  // 12 janvier
+  { type: "entrainement", title: "Entraînement du jour 19", url: "" }, // 13 janvier
+  { type: "recette",      title: "Recette du jour 20",     url: "" },  // 14 janvier
+  { type: "entrainement", title: "Entraînement du jour 21", url: "" }, // 15 janvier
+  { type: "recette",      title: "Recette du jour 22",     url: "" },  // 16 janvier
+  { type: "entrainement", title: "Entraînement du jour 23", url: "" }, // 17 janvier
+  { type: "recette",      title: "Recette du jour 24",     url: "" },  // 18 janvier
+  { type: "entrainement", title: "Entraînement du jour 25", url: "" }, // 19 janvier
+  { type: "recette",      title: "Recette du jour 26",     url: "" },  // 20 janvier
+  { type: "entrainement", title: "Entraînement du jour 27", url: "" }, // 21 janvier
+  { type: "recette",      title: "Recette du jour 28",     url: "" },  // 22 janvier
+  { type: "entrainement", title: "Entraînement du jour 29", url: "" }, // 23 janvier
+  { type: "recette",      title: "Recette du jour 30",     url: "" },  // 24 janvier
+  { type: "entrainement", title: "Entraînement du jour 31", url: "" }, // 25 janvier
+  { type: "recette",      title: "Recette du jour 32",     url: "" },  // 26 janvier
+  { type: "entrainement", title: "Entraînement du jour 33", url: "" }, // 27 janvier
+  { type: "recette",      title: "Recette du jour 34",     url: "" },  // 28 janvier
+  { type: "entrainement", title: "Entraînement du jour 35", url: "" }, // 29 janvier
+  { type: "recette",      title: "Recette du jour 36",     url: "" },  // 30 janvier
+  { type: "entrainement", title: "Entraînement du jour 37", url: "" }, // 31 janvier
 ];
 
 const TOTAL_DAYS = 37;
@@ -75,7 +74,6 @@ function getSeason(today) {
     const end = new Date(startYear + 1, 0, 31, 23, 59, 59, 999);
     if (today >= start && today <= end) return { startYear, start, active: true };
   }
-  // Hors période : on affiche la prochaine édition, toutes portes fermées.
   return { startYear: year, start: new Date(year, 11, 26), active: false };
 }
 
@@ -92,7 +90,7 @@ const preview = params.has("preview");
 const today = new Date();
 const season = getSeason(today);
 const currentIndex = season.active ? Math.max(0, Math.min(TOTAL_DAYS - 1, dayIndex(today, season.startYear))) : -1;
-const storageKey = `calendrier-apres:opened:${season.startYear}`;
+const storageKey = `calendrier-apres-annah:opened:${season.startYear}`;
 
 function loadOpened() {
   if (preview) return new Set();
@@ -111,7 +109,7 @@ function saveOpened() {
   try {
     localStorage.setItem(storageKey, JSON.stringify([...opened]));
   } catch {
-    /* navigation privée ou stockage indisponible : on continue sans sauver */
+    /* stockage indisponible : on continue sans sauvegarder */
   }
 }
 
@@ -119,11 +117,33 @@ function isAvailable(index) {
   return preview || index <= currentIndex;
 }
 
-/* --------------------------------- DOM ------------------------------------ */
+function cardState(index) {
+  if (!isAvailable(index)) return "locked";
+  if (opened.has(index)) return "open";
+  return "ready";
+}
+
+/* --------------------------------- Textes --------------------------------- */
+
+function typeLabel(type) {
+  return type === "recette" ? "RECETTE" : "ENTRAÎNEMENT";
+}
+
+function dialogHeading(type) {
+  return type === "recette" ? "Ta recette du jour" : "Ton entraînement du jour";
+}
+
+function actionLabel(type) {
+  return type === "recette" ? "Voir la recette" : "Voir l'entraînement";
+}
+
+/* ---------------------------------- DOM ----------------------------------- */
 
 const grid = document.getElementById("grid");
 const dialog = document.getElementById("door-dialog");
 const dialogDate = document.getElementById("dialog-date");
+const dialogType = document.getElementById("dialog-type");
+const dialogTitle = document.getElementById("dialog-title");
 const dialogText = document.getElementById("dialog-text");
 const dialogLink = document.getElementById("dialog-link");
 const dialogClose = document.getElementById("dialog-close");
@@ -133,33 +153,40 @@ const progressBar = document.getElementById("progress-bar");
 const countdown = document.getElementById("countdown");
 const toast = document.getElementById("toast");
 
-document.getElementById("season-label").textContent = `${season.startYear} → ${season.startYear + 1}`;
-if (preview) {
-  document.querySelector(".hero__hint").textContent = "Mode aperçu : toutes les portes sont débloquées.";
+function describeCard(index, state) {
+  const base = `Porte ${index + 1}, ${formatDate(index, season.startYear)}`;
+  if (state === "locked") return `${base} : à venir`;
+  if (state === "open") return `${base} : ${typeLabel(DAYS[index].type)} — ${DAYS[index].title}`;
+  return `${base} : à ouvrir`;
 }
 
-function platformName(index) {
-  const custom = NAMES[index];
-  if (custom) return custom;
-  const url = LINKS[index];
-  if (!url) return "la plateforme du jour";
-  try {
-    return new URL(url).hostname.replace(/^www\./, "");
-  } catch {
-    return "la plateforme du jour";
+function setCardContent(card, index, state) {
+  const icon = card.querySelector(".card__icon");
+  const foot = card.querySelector(".card__foot");
+  foot.replaceChildren();
+
+  if (state === "open") {
+    const day = DAYS[index];
+    const typeEl = document.createElement("span");
+    typeEl.className = "card__type";
+    typeEl.textContent = typeLabel(day.type);
+    const titleEl = document.createElement("span");
+    titleEl.className = "card__title";
+    titleEl.textContent = day.title;
+    foot.append(typeEl, titleEl);
+    icon.textContent = day.type === "recette" ? "🥗" : "💪";
+  } else {
+    const statusEl = document.createElement("span");
+    statusEl.className = "card__status";
+    const iconEl = document.createElement("span");
+    iconEl.setAttribute("aria-hidden", "true");
+    iconEl.textContent = state === "locked" ? "🔒" : "🎁";
+    const labelEl = document.createElement("span");
+    labelEl.textContent = state === "locked" ? "À venir" : "Ouvrir";
+    statusEl.append(iconEl, labelEl);
+    foot.appendChild(statusEl);
+    icon.textContent = state === "locked" ? "🔒" : "🎁";
   }
-}
-
-function cardState(index) {
-  if (!isAvailable(index)) return "locked";
-  if (opened.has(index)) return "open";
-  return "ready";
-}
-
-function statusContent(state) {
-  if (state === "locked") return { icon: "🔒", label: "À venir" };
-  if (state === "open") return { icon: "✓", label: "Ouvert" };
-  return { icon: "🎁", label: "Ouvrir" };
 }
 
 function renderCards() {
@@ -167,25 +194,21 @@ function renderCards() {
 
   for (let index = 0; index < TOTAL_DAYS; index += 1) {
     const state = cardState(index);
-    const { icon, label } = statusContent(state);
     const card = document.createElement("button");
     card.type = "button";
     card.className = `card is-${state}`;
     card.dataset.index = String(index);
     card.style.setProperty("--i", String(index));
-    card.setAttribute("aria-label", `Porte ${index + 1}, ${formatDate(index, season.startYear)} : ${label}`);
+    card.setAttribute("aria-label", describeCard(index, state));
     card.innerHTML = `
       <span class="card__top">
         <span class="card__date">${formatDate(index, season.startYear, true)}</span>
         <span class="card__icon" aria-hidden="true"></span>
       </span>
       <span class="card__num">${index + 1}</span>
-      <span class="card__status"><span class="card__status-icon" aria-hidden="true"></span><span class="card__status-label"></span></span>
-      ${state === "ready" ? '<span class="card__glow"></span>' : ""}
+      <span class="card__foot"></span>
     `;
-    card.querySelector(".card__icon").textContent = icon;
-    card.querySelector(".card__status-icon").textContent = state === "locked" ? "" : icon;
-    card.querySelector(".card__status-label").textContent = label;
+    setCardContent(card, index, state);
     fragment.appendChild(card);
   }
 
@@ -197,12 +220,9 @@ function refreshCard(index) {
   const card = grid.querySelector(`[data-index="${index}"]`);
   if (!card) return;
   const state = cardState(index);
-  const { icon, label } = statusContent(state);
   card.className = `card is-${state}`;
-  card.querySelector(".card__icon").textContent = icon;
-  card.querySelector(".card__status-icon").textContent = state === "locked" ? "" : icon;
-  card.querySelector(".card__status-label").textContent = label;
-  card.setAttribute("aria-label", `Porte ${index + 1}, ${formatDate(index, season.startYear)} : ${label}`);
+  card.setAttribute("aria-label", describeCard(index, state));
+  setCardContent(card, index, state);
 }
 
 function updateProgress() {
@@ -225,7 +245,7 @@ function confetti(x, y) {
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
   const layer = document.createElement("div");
   layer.className = "confetti";
-  const colors = ["#f3c678", "#e88fa8", "#81d4c2", "#ffffff", "#9b8cf0"];
+  const colors = ["#b40225", "#ec1c46", "#ffffff", "#1e1e1e", "#f3a6b7"];
   for (let i = 0; i < 28; i += 1) {
     const particle = document.createElement("span");
     const angle = (Math.PI * 2 * i) / 28 + Math.random() * 0.4;
@@ -253,6 +273,8 @@ function openDoor(index, event) {
     return;
   }
 
+  const day = DAYS[index];
+
   if (!opened.has(index)) {
     opened.add(index);
     saveOpened();
@@ -260,19 +282,22 @@ function openDoor(index, event) {
     updateProgress();
   }
 
-  const name = platformName(index);
-  const strong = document.createElement("strong");
-  strong.textContent = name;
-  dialogText.replaceChildren("Votre lien du jour vous attend sur ", strong, ". Bonne découverte !");
   dialogDate.textContent = `PORTE ${index + 1} · ${formatDate(index, season.startYear)}`;
+  dialogType.textContent = typeLabel(day.type);
+  dialogTitle.textContent = dialogHeading(day.type);
 
-  const url = LINKS[index];
+  const strong = document.createElement("strong");
+  strong.textContent = day.title;
+  const url = day.url;
   if (url && /^https?:\/\//i.test(url)) {
+    dialogText.replaceChildren(strong, document.createTextNode(". Clique ci-dessous pour y accéder."));
     dialogLink.href = url;
+    dialogLink.textContent = `${actionLabel(day.type)} ↗`;
     dialogLink.removeAttribute("disabled");
-    dialogLink.hidden = false;
   } else {
+    dialogText.replaceChildren(strong, document.createTextNode(". Le lien sera ajouté prochainement."));
     dialogLink.removeAttribute("href");
+    dialogLink.textContent = "Lien à ajouter";
     dialogLink.setAttribute("disabled", "");
   }
 
@@ -299,9 +324,9 @@ document.getElementById("reset-btn").addEventListener("click", () => {
     return;
   }
   localStorage.removeItem(storageKey);
-  showToast("Vos portes ouvertes ont été réinitialisées.");
   opened.clear();
   renderCards();
+  showToast("Vos portes ouvertes ont été réinitialisées.");
 });
 
 /* -------------------------------- Countdown ------------------------------- */
@@ -317,7 +342,7 @@ function nextTarget() {
 function updateCountdown() {
   const target = nextTarget();
   if (!target) {
-    countdown.innerHTML = '<span class="countdown__label">Toutes les portes sont ouvertes. À l’année prochaine ! ✦</span>';
+    countdown.innerHTML = '<span class="countdown__label">Toutes les portes sont ouvertes. À l’an prochain ! ✦</span>';
     return;
   }
   const diff = Math.max(0, target.getTime() - Date.now());
@@ -335,28 +360,8 @@ function updateCountdown() {
   `;
 }
 
-/* --------------------------------- Snow ----------------------------------- */
-
-function makeSnow() {
-  const container = document.getElementById("snow");
-  const fragment = document.createDocumentFragment();
-  for (let i = 0; i < 45; i += 1) {
-    const flake = document.createElement("span");
-    const size = 2 + Math.random() * 4;
-    flake.style.setProperty("--x", `${Math.random() * 100}%`);
-    flake.style.setProperty("--s", `${size}px`);
-    flake.style.setProperty("--o", String(0.25 + Math.random() * 0.5));
-    flake.style.setProperty("--d", `${9 + Math.random() * 14}s`);
-    flake.style.setProperty("--delay", `${-Math.random() * 20}s`);
-    flake.style.setProperty("--drift", `${Math.random() * 120 - 60}px`);
-    fragment.appendChild(flake);
-  }
-  container.appendChild(fragment);
-}
-
 /* ---------------------------------- Init ---------------------------------- */
 
 renderCards();
 updateCountdown();
 setInterval(updateCountdown, 1000);
-makeSnow();
