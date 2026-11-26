@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Le calendrier de l'après : une porte à ouvrir chaque jour du 26 décembre au 31 janvier, et un lien vers une nouvelle plateforme." />
+  <meta name="theme-color" content="#0b1024" />
+  <title>Calendrier de l'après — 26 décembre → 31 janvier</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='88'%3E🎁%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="snow" id="snow" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="#haut" aria-label="Retour en haut">
+      <span class="brand__icon" aria-hidden="true">✦</span>
+      <span>Calendrier <strong>de l'après</strong></span>
+    </a>
+    <div class="header-meta"><span>26.12</span><span class="header-meta__arrow">→</span><span>31.01</span></div>
+  </header>
+
+  <main id="haut">
+    <section class="hero">
+      <div class="hero__glow" aria-hidden="true"></div>
+      <p class="eyebrow">Édition <span id="season-label">2026 → 2027</span></p>
+      <h1>Le calendrier<br /><em>de l'après</em></h1>
+      <p class="hero__lead">
+        Les fêtes sont passées, mais les surprises continuent.<br class="break-desktop" />
+        37 jours, 37 portes, 37 nouvelles plateformes à découvrir.
+      </p>
+
+      <div class="countdown" id="countdown" role="timer" aria-live="polite">
+        <span class="countdown__label">Chargement…</span>
+      </div>
+
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="#calendrier">Découvrir les portes <span aria-hidden="true">↓</span></a>
+        <span class="hero__hint">Une porte par jour, à minuit précis.</span>
+      </div>
+    </section>
+
+    <section class="calendar" id="calendrier" aria-labelledby="calendar-title">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Les 37 portes</p>
+          <h2 id="calendar-title">La suite attend…</h2>
+        </div>
+        <div class="progress-wrap">
+          <span id="progress-text" aria-live="polite">0 / 37 ouvertes</span>
+          <div class="progress" role="presentation"><div class="progress__bar" id="progress-bar"></div></div>
+        </div>
+      </div>
+      <div class="grid" id="grid"></div>
+    </section>
+
+    <section class="how">
+      <div class="how__intro">
+        <p class="eyebrow">Mode d'emploi</p>
+        <h2>C'est aussi simple que ça</h2>
+      </div>
+      <ol class="steps">
+        <li class="step"><span class="step__num">01</span><h3>Passez voir</h3><p>Chaque jour à partir du 26 décembre, une nouvelle porte s'allume.</p></li>
+        <li class="step"><span class="step__num">02</span><h3>Ouvrez la porte</h3><p>Un clic suffit pour révéler la surprise du jour.</p></li>
+        <li class="step"><span class="step__num">03</span><h3>Découvrez</h3><p>Un lien vous emmène directement sur la plateforme du jour.</p></li>
+      </ol>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Calendrier de l'après · Du 26 décembre au 31 janvier</p>
+    <p class="footer-links">
+      <a href="?preview=1">Mode aperçu (tout débloquer)</a>
+      <button type="button" id="reset-btn" class="link-btn">Réinitialiser mes portes ouvertes</button>
+    </p>
+  </footer>
+
+  <dialog id="door-dialog" class="dialog" aria-labelledby="dialog-title">
+    <button type="button" class="dialog__close" id="dialog-close" aria-label="Fermer la fenêtre">×</button>
+    <div class="dialog__icon" aria-hidden="true">🎁</div>
+    <p class="eyebrow" id="dialog-date">26 DÉCEMBRE</p>
+    <h2 id="dialog-title">Votre surprise du jour</h2>
+    <p class="dialog__text" id="dialog-text"></p>
+    <a class="btn btn--primary dialog__cta" id="dialog-link" target="_blank" rel="noopener noreferrer">Accéder à la plateforme <span aria-hidden="true">↗</span></a>
+    <button type="button" class="btn btn--ghost" id="dialog-later">Revenir plus tard</button>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
