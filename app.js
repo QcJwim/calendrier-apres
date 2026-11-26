@@ -1,9 +1,9 @@
 /* ============================================================================
-   Calendrier de l'après — Coach Annabh — 26 décembre → 31 janvier
+   Calendrier de l'après — Coach Annabh — 1er au 30 janvier (30 jours)
    ----------------------------------------------------------------------------
    Chaque porte cache un lien vers un entraînement ou une recette.
-   Pour personnaliser, remplissez les 37 lignes ci-dessous dans l'ordre :
-   26, 27, 28, 29, 30, 31 décembre puis 1 → 31 janvier.
+   Pour personnaliser, remplissez les 30 lignes ci-dessous dans l'ordre :
+   1, 2, 3 ... 30 janvier.
 
    type  : "entrainement" ou "recette"
    title : le nom affiché quand la porte est ouverte
@@ -11,76 +11,67 @@
    ========================================================================== */
 
 const DAYS = [
-  { type: "entrainement", title: "Entraînement du jour 1", url: "" },  // 26 décembre
-  { type: "recette",      title: "Recette du jour 2",      url: "" },  // 27 décembre
-  { type: "entrainement", title: "Entraînement du jour 3", url: "" },  // 28 décembre
-  { type: "recette",      title: "Recette du jour 4",      url: "" },  // 29 décembre
-  { type: "entrainement", title: "Entraînement du jour 5", url: "" },  // 30 décembre
-  { type: "recette",      title: "Recette du jour 6",      url: "" },  // 31 décembre
-  { type: "entrainement", title: "Entraînement du jour 7", url: "" },  // 1 janvier
-  { type: "recette",      title: "Recette du jour 8",      url: "" },  // 2 janvier
-  { type: "entrainement", title: "Entraînement du jour 9", url: "" },  // 3 janvier
-  { type: "recette",      title: "Recette du jour 10",     url: "" },  // 4 janvier
-  { type: "entrainement", title: "Entraînement du jour 11", url: "" }, // 5 janvier
-  { type: "recette",      title: "Recette du jour 12",     url: "" },  // 6 janvier
-  { type: "entrainement", title: "Entraînement du jour 13", url: "" }, // 7 janvier
-  { type: "recette",      title: "Recette du jour 14",     url: "" },  // 8 janvier
-  { type: "entrainement", title: "Entraînement du jour 15", url: "" }, // 9 janvier
-  { type: "recette",      title: "Recette du jour 16",     url: "" },  // 10 janvier
-  { type: "entrainement", title: "Entraînement du jour 17", url: "" }, // 11 janvier
-  { type: "recette",      title: "Recette du jour 18",     url: "" },  // 12 janvier
-  { type: "entrainement", title: "Entraînement du jour 19", url: "" }, // 13 janvier
-  { type: "recette",      title: "Recette du jour 20",     url: "" },  // 14 janvier
-  { type: "entrainement", title: "Entraînement du jour 21", url: "" }, // 15 janvier
-  { type: "recette",      title: "Recette du jour 22",     url: "" },  // 16 janvier
-  { type: "entrainement", title: "Entraînement du jour 23", url: "" }, // 17 janvier
-  { type: "recette",      title: "Recette du jour 24",     url: "" },  // 18 janvier
-  { type: "entrainement", title: "Entraînement du jour 25", url: "" }, // 19 janvier
-  { type: "recette",      title: "Recette du jour 26",     url: "" },  // 20 janvier
-  { type: "entrainement", title: "Entraînement du jour 27", url: "" }, // 21 janvier
-  { type: "recette",      title: "Recette du jour 28",     url: "" },  // 22 janvier
-  { type: "entrainement", title: "Entraînement du jour 29", url: "" }, // 23 janvier
-  { type: "recette",      title: "Recette du jour 30",     url: "" },  // 24 janvier
-  { type: "entrainement", title: "Entraînement du jour 31", url: "" }, // 25 janvier
-  { type: "recette",      title: "Recette du jour 32",     url: "" },  // 26 janvier
-  { type: "entrainement", title: "Entraînement du jour 33", url: "" }, // 27 janvier
-  { type: "recette",      title: "Recette du jour 34",     url: "" },  // 28 janvier
-  { type: "entrainement", title: "Entraînement du jour 35", url: "" }, // 29 janvier
-  { type: "recette",      title: "Recette du jour 36",     url: "" },  // 30 janvier
-  { type: "entrainement", title: "Entraînement du jour 37", url: "" }, // 31 janvier
+  { type: "entrainement", title: "Entraînement du jour 1", url: "" },  // 1 janvier
+  { type: "recette",      title: "Recette du jour 2",      url: "" },  // 2 janvier
+  { type: "entrainement", title: "Entraînement du jour 3", url: "" },  // 3 janvier
+  { type: "recette",      title: "Recette du jour 4",      url: "" },  // 4 janvier
+  { type: "entrainement", title: "Entraînement du jour 5", url: "" },  // 5 janvier
+  { type: "recette",      title: "Recette du jour 6",      url: "" },  // 6 janvier
+  { type: "entrainement", title: "Entraînement du jour 7", url: "" },  // 7 janvier
+  { type: "recette",      title: "Recette du jour 8",      url: "" },  // 8 janvier
+  { type: "entrainement", title: "Entraînement du jour 9", url: "" },  // 9 janvier
+  { type: "recette",      title: "Recette du jour 10",     url: "" },  // 10 janvier
+  { type: "entrainement", title: "Entraînement du jour 11", url: "" }, // 11 janvier
+  { type: "recette",      title: "Recette du jour 12",     url: "" },  // 12 janvier
+  { type: "entrainement", title: "Entraînement du jour 13", url: "" }, // 13 janvier
+  { type: "recette",      title: "Recette du jour 14",     url: "" },  // 14 janvier
+  { type: "entrainement", title: "Entraînement du jour 15", url: "" }, // 15 janvier
+  { type: "recette",      title: "Recette du jour 16",     url: "" },  // 16 janvier
+  { type: "entrainement", title: "Entraînement du jour 17", url: "" }, // 17 janvier
+  { type: "recette",      title: "Recette du jour 18",     url: "" },  // 18 janvier
+  { type: "entrainement", title: "Entraînement du jour 19", url: "" }, // 19 janvier
+  { type: "recette",      title: "Recette du jour 20",     url: "" },  // 20 janvier
+  { type: "entrainement", title: "Entraînement du jour 21", url: "" }, // 21 janvier
+  { type: "recette",      title: "Recette du jour 22",     url: "" },  // 22 janvier
+  { type: "entrainement", title: "Entraînement du jour 23", url: "" }, // 23 janvier
+  { type: "recette",      title: "Recette du jour 24",     url: "" },  // 24 janvier
+  { type: "entrainement", title: "Entraînement du jour 25", url: "" }, // 25 janvier
+  { type: "recette",      title: "Recette du jour 26",     url: "" },  // 26 janvier
+  { type: "entrainement", title: "Entraînement du jour 27", url: "" }, // 27 janvier
+  { type: "recette",      title: "Recette du jour 28",     url: "" },  // 28 janvier
+  { type: "entrainement", title: "Entraînement du jour 29", url: "" }, // 29 janvier
+  { type: "recette",      title: "Recette du jour 30",     url: "" },  // 30 janvier
 ];
 
-const TOTAL_DAYS = 37;
-const MONTHS = { 11: "DÉCEMBRE", 0: "JANVIER" };
-const MONTHS_SHORT = { 11: "DÉC", 0: "JAN" };
+const TOTAL_DAYS = 30;
+const MONTH = "JANVIER";
+const MONTH_SHORT = "JAN";
 
 /* --------------------------------- Dates ---------------------------------- */
 
-function dateForIndex(index, startYear) {
-  return index < 6
-    ? new Date(startYear, 11, 26 + index)
-    : new Date(startYear + 1, 0, index - 5);
+function dateForIndex(index, year) {
+  return new Date(year, 0, 1 + index);
 }
 
-function dayIndex(date, startYear) {
-  if (date.getMonth() === 11) return date.getDate() - 26;
-  return 6 + date.getDate() - 1;
+function dayIndex(date) {
+  return date.getMonth() === 0 ? date.getDate() - 1 : -1;
 }
 
 function getSeason(today) {
   const year = today.getFullYear();
-  for (const startYear of [year, year - 1, year + 1]) {
-    const start = new Date(startYear, 11, 26);
-    const end = new Date(startYear + 1, 0, 31, 23, 59, 59, 999);
-    if (today >= start && today <= end) return { startYear, start, active: true };
+  for (const candidate of [year, year + 1, year - 1]) {
+    const start = new Date(candidate, 0, 1);
+    const end = new Date(candidate, 0, TOTAL_DAYS, 23, 59, 59, 999);
+    if (today >= start && today <= end) return { year: candidate, start, active: true };
   }
-  return { startYear: year, start: new Date(year, 11, 26), active: false };
+  const endOfThisYear = new Date(year, 0, TOTAL_DAYS, 23, 59, 59, 999);
+  const upcomingYear = today > endOfThisYear ? year + 1 : year;
+  return { year: upcomingYear, start: new Date(upcomingYear, 0, 1), active: false };
 }
 
-function formatDate(index, startYear, short = false) {
-  const date = dateForIndex(index, startYear);
-  const month = (short ? MONTHS_SHORT : MONTHS)[date.getMonth()];
-  return `${date.getDate()} ${month}`;
+function formatDate(index, year, short = false) {
+  const date = dateForIndex(index, year);
+  return `${date.getDate()} ${short ? MONTH_SHORT : MONTH}`;
 }
 
 /* --------------------------------- État ----------------------------------- */
@@ -89,8 +80,9 @@ const params = new URLSearchParams(window.location.search);
 const preview = params.has("preview");
 const today = new Date();
 const season = getSeason(today);
-const currentIndex = season.active ? Math.max(0, Math.min(TOTAL_DAYS - 1, dayIndex(today, season.startYear))) : -1;
-const storageKey = `calendrier-apres-annah:opened:${season.startYear}`;
+const rawIndex = dayIndex(today);
+const currentIndex = season.active ? Math.max(0, Math.min(TOTAL_DAYS - 1, rawIndex)) : -1;
+const storageKey = `calendrier-apres-annah:opened:${season.year}`;
 
 function loadOpened() {
   if (preview) return new Set();
@@ -154,7 +146,7 @@ const countdown = document.getElementById("countdown");
 const toast = document.getElementById("toast");
 
 function describeCard(index, state) {
-  const base = `Porte ${index + 1}, ${formatDate(index, season.startYear)}`;
+  const base = `Porte ${index + 1}, ${formatDate(index, season.year)}`;
   if (state === "locked") return `${base} : à venir`;
   if (state === "open") return `${base} : ${typeLabel(DAYS[index].type)} — ${DAYS[index].title}`;
   return `${base} : à ouvrir`;
@@ -202,7 +194,7 @@ function renderCards() {
     card.setAttribute("aria-label", describeCard(index, state));
     card.innerHTML = `
       <span class="card__top">
-        <span class="card__date">${formatDate(index, season.startYear, true)}</span>
+        <span class="card__date">${formatDate(index, season.year, true)}</span>
         <span class="card__icon" aria-hidden="true"></span>
       </span>
       <span class="card__num">${index + 1}</span>
@@ -269,7 +261,7 @@ function openDoor(index, event) {
     card.classList.remove("shake");
     void card.offsetWidth;
     card.classList.add("shake");
-    showToast(`Cette porte s'ouvrira le ${formatDate(index, season.startYear)}.`);
+    showToast(`Cette porte s'ouvrira le ${formatDate(index, season.year)}.`);
     return;
   }
 
@@ -282,7 +274,7 @@ function openDoor(index, event) {
     updateProgress();
   }
 
-  dialogDate.textContent = `PORTE ${index + 1} · ${formatDate(index, season.startYear)}`;
+  dialogDate.textContent = `PORTE ${index + 1} · ${formatDate(index, season.year)}`;
   dialogType.textContent = typeLabel(day.type);
   dialogTitle.textContent = dialogHeading(day.type);
 
@@ -334,7 +326,7 @@ document.getElementById("reset-btn").addEventListener("click", () => {
 function nextTarget() {
   if (!season.active) return season.start;
   if (currentIndex >= TOTAL_DAYS - 1) return null;
-  const target = dateForIndex(currentIndex + 1, season.startYear);
+  const target = dateForIndex(currentIndex + 1, season.year);
   target.setHours(0, 0, 0, 0);
   return target;
 }
