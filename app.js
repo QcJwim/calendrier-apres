@@ -1,9 +1,9 @@
 /* ============================================================================
-   Calendrier de l'après — Coach Annabh — 1er au 30 janvier (30 jours)
+   Calendrier de l'après — Coach Annabh — 1er au 31 janvier (31 jours)
    ----------------------------------------------------------------------------
    Chaque porte cache un lien vers un entraînement ou une recette.
-   Pour personnaliser, remplissez les 30 lignes ci-dessous dans l'ordre :
-   1, 2, 3 ... 30 janvier.
+   Pour personnaliser, remplissez les 31 lignes ci-dessous dans l'ordre :
+   1, 2, 3 ... 31 janvier.
 
    type  : "entrainement" ou "recette"
    title : le nom affiché quand la porte est ouverte
@@ -41,9 +41,10 @@ const DAYS = [
   { type: "recette",      title: "Recette du jour 28",     url: "" },  // 28 janvier
   { type: "entrainement", title: "Entraînement du jour 29", url: "" }, // 29 janvier
   { type: "recette",      title: "Recette du jour 30",     url: "" },  // 30 janvier
+  { type: "entrainement", title: "Entraînement du jour 31", url: "" }, // 31 janvier
 ];
 
-const TOTAL_DAYS = 30;
+const TOTAL_DAYS = 31;
 const MONTH = "JANVIER";
 const MONTH_SHORT = "JAN";
 
